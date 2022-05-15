@@ -119,26 +119,33 @@ body{
 
 .container label{
     cursor: pointer;
-    display: inline-block;
-    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
     position: relative;
-    width: 1.5rem;
-    border-radius: 50%; 
-    background: rgb(237, 126, 0);
+    width: 2rem;
 	transition: background ease-in-out .5s;
 }
 
-.container label:hover{
+.container label span{
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%; 
+    background: rgb(237, 126, 0);
+}
+
+.container label span:hover{
     background: rgb(87, 87, 87);
 }
 
-#slide1:checked ~ .sub .controls label:nth-of-type(1),
-#slide2:checked ~ .sub .controls label:nth-of-type(2),
-#slide3:checked ~ .sub .controls label:nth-of-type(3),
-#slide4:checked ~ .sub .controls label:nth-of-type(4),
-#slide5:checked ~ .sub .controls label:nth-of-type(5),
-#slide6:checked ~ .sub .controls label:nth-of-type(6){
-    background: transparent;
-    border: .125rem solid rgb(237, 126, 0);
+#slide1:checked ~ .sub .controls label span.span1,
+#slide2:checked ~ .sub .controls label span.span2,
+#slide3:checked ~ .sub .controls label span.span3,
+#slide4:checked ~ .sub .controls label span.span4,
+#slide5:checked ~ .sub .controls label span.span5,
+#slide6:checked ~ .sub .controls label span.span6{
+    background: white;
     z-index: 10;
 }
