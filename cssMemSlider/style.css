@@ -6,6 +6,8 @@
 
 body{
     background-color: cadetblue;
+    font-family: 'Arial-Regular';
+    color: rgb(255, 255, 255);
 }
 
 .container{
@@ -148,4 +150,9 @@ body{
 #slide6:checked ~ .sub .controls label span.span6{
     background: white;
     z-index: 10;
+}
+
+@font-face {
+    font-family: 'Arial-Regular';
+    src: url(./assets/fonts/arial_regular.ttf);
 }
