@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cadetblue;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container{
+    height: 70%;
+    width: 60%;
+    position: relative;
+    border: 2rem solid rgb(38, 38, 38);
+    border-radius: 2rem;
+}
+
+.slider-menu-container{
+    display: flex;
+    height: 10%;
+    width: 60%;
+}
+
+.slider{
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.sub{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 0 2rem;
+    background: rgb(117, 117, 117);
+}
+
+.controls{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    box-sizing: border-box;
+    gap: .3rem;
+}
+
+.texter{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.slider-container > input{
+    display: none;
+}
+
+.slides {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    transition: ease-in-out 1.5s;
+}
+
+.texts {
+    opacity: 0;
+    margin-left: 15rem;
+    position: absolute;
+    z-index: 0;
+    transition: ease-in-out 1.5s;
+}
+
+.slide1 img,
+.slide2 img,
+.slide3 img,
+.slide4 img,
+.slide5 img,
+.slide6 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5,
+#slide6:checked ~ .slider > .slide6{
+    opacity: 1;
+    z-index: 1;
+}
+
+#slide1:checked ~ .sub .texter > .text1,
+#slide2:checked ~ .sub .texter > .text2,
+#slide3:checked ~ .sub .texter > .text3,
+#slide4:checked ~ .sub .texter > .text4,
+#slide5:checked ~ .sub .texter > .text5,
+#slide6:checked ~ .sub .texter > .text6{
+    opacity: 1;
+    z-index: 1;
+    margin-left: 0;
+}
+
+.container label{
+    cursor: pointer;
+    display: inline-block;
+    height: .5rem;
+    position: relative;
+    width: .5rem;
+    border-radius: 50%; 
+    background: blue;
+	transition: background ease-in-out .5s;
+}
+
+.container label:hover{
+    background: white;
+}
+
+#slide1:checked ~ .sub .controls label:nth-of-type(1),
+#slide2:checked ~ .sub .controls label:nth-of-type(2),
+#slide3:checked ~ .sub .controls label:nth-of-type(3),
+#slide4:checked ~ .sub .controls label:nth-of-type(4),
+#slide5:checked ~ .sub .controls label:nth-of-type(5),
+#slide6:checked ~ .sub .controls label:nth-of-type(6){
+    background: transparent;
+    border: .125rem solid blue;
+    z-index: 10;
+}
