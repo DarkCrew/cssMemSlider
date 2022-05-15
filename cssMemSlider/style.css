@@ -120,16 +120,16 @@ body{
 .container label{
     cursor: pointer;
     display: inline-block;
-    height: .5rem;
+    height: 1.5rem;
     position: relative;
-    width: .5rem;
+    width: 1.5rem;
     border-radius: 50%; 
-    background: blue;
+    background: rgb(237, 126, 0);
 	transition: background ease-in-out .5s;
 }
 
 .container label:hover{
-    background: white;
+    background: rgb(87, 87, 87);
 }
 
 #slide1:checked ~ .sub .controls label:nth-of-type(1),
@@ -139,6 +139,6 @@ body{
 #slide5:checked ~ .sub .controls label:nth-of-type(5),
 #slide6:checked ~ .sub .controls label:nth-of-type(6){
     background: transparent;
-    border: .125rem solid blue;
+    border: .125rem solid rgb(237, 126, 0);
     z-index: 10;
 }
