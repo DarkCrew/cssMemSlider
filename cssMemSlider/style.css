@@ -26,7 +26,7 @@ body{
     width: 60%;
     border: 2rem solid rgb(38, 38, 38);
     border-radius: 2rem;
-    box-shadow: 3px 3px rgb(0, 0, 0), -1em 0 .4em rgba(55, 55, 55, .7);
+    box-shadow: .2rem .2rem rgb(0, 0, 0), -1em 0 .4em rgba(55, 55, 55, .7);
     overflow: hidden;
 }
 
@@ -157,7 +157,7 @@ body{
     background: rgb(237, 126, 0);
 }
 
-.container label span:hover{
+.container label:hover span{
     background: rgb(87, 87, 87);
 }
 
