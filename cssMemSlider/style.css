@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(./assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial-Regular';
+    color: rgb(255, 255, 255);
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container{
+    height: 70%;
+    width: 60%;
+    border: 2rem solid rgb(38, 38, 38);
+    border-radius: 2rem;
+    box-shadow: .2rem .2rem rgb(0, 0, 0), -1em 0 .4em rgba(55, 55, 55, .7);
+    overflow: hidden;
+}
+
+.slider-menu-container{
+    display: flex;
+    height: 10%;
+    width: 60%;
+}
+
+.slider{
+    height: 90%;
+    width: 600%;
+    overflow: hidden;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    transition: ease-in-out 1.5s;
+}
+
+.sub{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 0 2rem;
+    background: rgb(117, 117, 117);
+}
+
+.controls{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    box-sizing: border-box;
+    gap: .3rem;
+}
+
+.texter{
+    height: 100%;
+    width: 70%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.texter-container{
+    display: flex;
+    height: 100%;
+    width: 600%;
+    transition: ease-in-out 1.5s;
+}
+
+.slider-container > input{
+    display: none;
+}
+
+.slides {
+    height: 100%;
+    width: 100%;
+    transition: ease-in-out 1.5s;
+}
+
+.texts {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem;
+    transition: ease-in-out 1.5s;
+}
+
+.slide1 img,
+.slide2 img,
+.slide3 img,
+.slide4 img,
+.slide5 img,
+.slide6 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#slide2:checked ~ .slider{
+    margin-left: -100%;
+}
+#slide2:checked ~ .sub .texter .texter-container{
+    margin-left: -100%;
+}
+#slide3:checked ~ .slider{
+    margin-left: -200%;
+}
+#slide3:checked ~ .sub .texter .texter-container{
+    margin-left: -200%;
+}
+#slide4:checked ~ .slider{
+    margin-left: -300%;
+}
+#slide4:checked ~ .sub .texter .texter-container{
+    margin-left: -300%;
+}
+#slide5:checked ~ .slider{
+    margin-left: -400%;
+}
+#slide5:checked ~ .sub .texter .texter-container{
+    margin-left: -400%;
+}
+#slide6:checked ~ .slider{
+    margin-left: -500%;
+}
+#slide6:checked ~ .sub .texter .texter-container{
+    margin-left: -500%;
+}
+
+.container label{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+	transition: background ease-in-out .5s;
+}
+
+.container label span{
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%; 
+    background: rgb(237, 126, 0);
+}
+
+.container label:hover span{
+    background: rgb(87, 87, 87);
+}
+
+#slide1:checked ~ .sub .controls label span.span1,
+#slide2:checked ~ .sub .controls label span.span2,
+#slide3:checked ~ .sub .controls label span.span3,
+#slide4:checked ~ .sub .controls label span.span4,
+#slide5:checked ~ .sub .controls label span.span5,
+#slide6:checked ~ .sub .controls label span.span6{
+    background: white;
+    z-index: 10;
+}
+
+#slide1:checked ~ .sub .controls label:nth-of-type(1),
+#slide2:checked ~ .sub .controls label:nth-of-type(2),
+#slide3:checked ~ .sub .controls label:nth-of-type(3),
+#slide4:checked ~ .sub .controls label:nth-of-type(4),
+#slide5:checked ~ .sub .controls label:nth-of-type(5),
+#slide6:checked ~ .sub .controls label:nth-of-type(6){
+    cursor: auto;
+}
+
+@media (max-width: 1024px) {
+
+    .slider-container {
+        width: 70%;
+        border: 1.5rem solid rgb(38, 38, 38);
+    }
+
+    .slider{
+        height: 80%;
+    }
+
+    .sub {
+        height: 20%;
+        flex-direction: column;
+    }
+
+    .texter{
+        width: 100%;
+        justify-content: center;
+        order: 2;
+    }
+
+    .controls{
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+
+    .container label span {
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        background: rgb(237, 126, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        width: 80%;
+        font-size: .8rem;
+    }
+
+    .container label span {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .sub {
+        padding: 0 1rem;
+    }
+}
+
+@font-face {
+    font-family: 'Arial-Regular';
+    src: url(./assets/fonts/arial_regular.ttf);
+}
