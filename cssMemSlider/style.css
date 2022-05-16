@@ -24,10 +24,10 @@ body{
 .slider-container{
     height: 70%;
     width: 60%;
-    position: relative;
     border: 2rem solid rgb(38, 38, 38);
     border-radius: 2rem;
     box-shadow: 3px 3px rgb(0, 0, 0), -1em 0 .4em rgba(55, 55, 55, .7);
+    overflow: hidden;
 }
 
 .slider-menu-container{
@@ -38,10 +38,11 @@ body{
 
 .slider{
     height: 90%;
-    width: 100%;
+    width: 600%;
     overflow: hidden;
-    position: relative;
+    display: flex;
     background-color: rgb(0, 0, 0);
+    transition: ease-in-out 1.5s;
 }
 
 .sub{
@@ -64,11 +65,17 @@ body{
 }
 
 .texter{
-    display: flex;
-    align-items: center;
     height: 100%;
     width: 70%;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+.texter-container{
+    display: flex;
+    height: 100%;
+    width: 600%;
+    transition: ease-in-out 1.5s;
 }
 
 .slider-container > input{
@@ -78,17 +85,15 @@ body{
 .slides {
     height: 100%;
     width: 100%;
-    opacity: 0;
-    position: absolute;
-    z-index: 0;
     transition: ease-in-out 1.5s;
 }
 
 .texts {
-    opacity: 0;
-    margin-left: 15rem;
-    position: absolute;
-    z-index: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem;
     transition: ease-in-out 1.5s;
 }
 
@@ -103,25 +108,35 @@ body{
     object-fit: contain;
 }
 
-#slide1:checked ~ .slider > .slide1,
-#slide2:checked ~ .slider > .slide2,
-#slide3:checked ~ .slider > .slide3,
-#slide4:checked ~ .slider > .slide4,
-#slide5:checked ~ .slider > .slide5,
-#slide6:checked ~ .slider > .slide6{
-    opacity: 1;
-    z-index: 1;
+#slide2:checked ~ .slider{
+    margin-left: -100%;
 }
-
-#slide1:checked ~ .sub .texter > .text1,
-#slide2:checked ~ .sub .texter > .text2,
-#slide3:checked ~ .sub .texter > .text3,
-#slide4:checked ~ .sub .texter > .text4,
-#slide5:checked ~ .sub .texter > .text5,
-#slide6:checked ~ .sub .texter > .text6{
-    opacity: 1;
-    z-index: 1;
-    margin-left: 0;
+#slide2:checked ~ .sub .texter .texter-container{
+    margin-left: -100%;
+}
+#slide3:checked ~ .slider{
+    margin-left: -200%;
+}
+#slide3:checked ~ .sub .texter .texter-container{
+    margin-left: -200%;
+}
+#slide4:checked ~ .slider{
+    margin-left: -300%;
+}
+#slide4:checked ~ .sub .texter .texter-container{
+    margin-left: -300%;
+}
+#slide5:checked ~ .slider{
+    margin-left: -400%;
+}
+#slide5:checked ~ .sub .texter .texter-container{
+    margin-left: -400%;
+}
+#slide6:checked ~ .slider{
+    margin-left: -500%;
+}
+#slide6:checked ~ .sub .texter .texter-container{
+    margin-left: -500%;
 }
 
 .container label{
@@ -130,7 +145,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 2rem;
-    position: relative;
     width: 2rem;
 	transition: background ease-in-out .5s;
 }
@@ -173,22 +187,6 @@ body{
         border: 1.5rem solid rgb(38, 38, 38);
     }
 
-    .texts {
-        text-align: center;
-        padding: 0 .5rem;
-        margin-left: 0;
-        margin-bottom: 2rem;
-    }
-
-    #slide1:checked ~ .sub .texter > .text1,
-    #slide2:checked ~ .sub .texter > .text2,
-    #slide3:checked ~ .sub .texter > .text3,
-    #slide4:checked ~ .sub .texter > .text4,
-    #slide5:checked ~ .sub .texter > .text5,
-    #slide6:checked ~ .sub .texter > .text6{
-        margin-bottom: 0;
-    }
-
     .slider{
         height: 80%;
     }
@@ -201,11 +199,13 @@ body{
     .texter{
         width: 100%;
         justify-content: center;
+        order: 2;
     }
 
     .controls{
         width: 100%;
         justify-content: center;
+        order: 1;
     }
 
     .container label span {
@@ -220,11 +220,16 @@ body{
 @media (max-width: 768px) {
     .slider-container {
         width: 80%;
+        font-size: .8rem;
     }
 
     .container label span {
         height: 1.5rem;
         width: 1.5rem;
+    }
+
+    .sub {
+        padding: 0 1rem;
     }
 }
 
